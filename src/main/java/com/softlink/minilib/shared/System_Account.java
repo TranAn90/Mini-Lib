@@ -1,4 +1,4 @@
-package com.itpro.minilib.shared;
+package com.softlink.minilib.shared;
 
 import java.io.Serializable;
 import java.util.List;

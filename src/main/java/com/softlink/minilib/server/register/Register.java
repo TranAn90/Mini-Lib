@@ -1,11 +1,11 @@
-package com.itpro.minilib.server.register;
+package com.softlink.minilib.server.register;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.googlecode.objectify.ObjectifyService;
 
-import com.itpro.minilib.shared.Invite_Token;
-import com.itpro.minilib.shared.System_Account;
-import com.itpro.minilib.shared.System_Organization;
+import com.softlink.minilib.shared.Invite_Token;
+import com.softlink.minilib.shared.System_Account;
+import com.softlink.minilib.shared.System_Organization;
 
 public class Register extends RemoteServiceServlet{
 

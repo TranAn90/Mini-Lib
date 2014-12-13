@@ -1,4 +1,4 @@
-package com.itpro.minilib.client;
+package com.softlink.minilib.client;
 
 import com.google.gwt.core.client.EntryPoint;
 

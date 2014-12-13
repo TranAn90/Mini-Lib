@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package com.itpro.minilib.server;
+package com.softlink.minilib.server;
 
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
@@ -23,10 +23,10 @@ import java.util.Random;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import com.itpro.minilib.client.rpc.SystemService;
-import com.itpro.minilib.shared.Invite_Token;
-import com.itpro.minilib.shared.System_Account;
-import com.itpro.minilib.shared.System_Organization;
+import com.softlink.minilib.client.rpc.SystemService;
+import com.softlink.minilib.shared.Invite_Token;
+import com.softlink.minilib.shared.System_Account;
+import com.softlink.minilib.shared.System_Organization;
 
 public class SystemServiceImpl extends RemoteServiceServlet implements SystemService {
 	

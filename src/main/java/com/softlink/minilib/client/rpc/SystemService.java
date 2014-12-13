@@ -12,16 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package com.itpro.minilib.client.rpc;
+package com.softlink.minilib.client.rpc;
 
 import java.util.List;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.ServiceDefTarget;
-import com.itpro.minilib.shared.Invite_Token;
-import com.itpro.minilib.shared.System_Account;
-import com.itpro.minilib.shared.System_Organization;
+import com.softlink.minilib.shared.Invite_Token;
+import com.softlink.minilib.shared.System_Account;
+import com.softlink.minilib.shared.System_Organization;
 
 public interface SystemService extends RemoteService {
 	

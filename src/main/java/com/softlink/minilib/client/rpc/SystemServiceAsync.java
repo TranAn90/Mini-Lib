@@ -1,9 +1,9 @@
-package com.itpro.minilib.client.rpc;
+package com.softlink.minilib.client.rpc;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.itpro.minilib.shared.Invite_Token;
-import com.itpro.minilib.shared.System_Account;
-import com.itpro.minilib.shared.System_Organization;
+import com.softlink.minilib.shared.Invite_Token;
+import com.softlink.minilib.shared.System_Account;
+import com.softlink.minilib.shared.System_Organization;
 
 public interface SystemServiceAsync {
 	
