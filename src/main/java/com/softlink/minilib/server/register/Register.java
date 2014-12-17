@@ -15,7 +15,5 @@ public class Register extends RemoteServiceServlet{
 		ObjectifyService.register(System_Account.class);
 		ObjectifyService.register(Invite_Token.class);
 	}
-	
-	
 
 }

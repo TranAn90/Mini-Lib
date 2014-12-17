@@ -1,6 +1,7 @@
 package com.softlink.minilib.shared;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.googlecode.objectify.annotation.Entity;
@@ -17,7 +18,7 @@ public class System_Account implements Serializable{
 	@Unindex
 	private String organizationCurrently;
 	@Unindex
-	private List<String> organizationList;
+	private List<String> organizationList = new ArrayList<String>();
 	
 	public System_Account() {
 		super();
@@ -27,9 +28,9 @@ public class System_Account implements Serializable{
 		return email;
 	}
 
-//	public void setEmail(String email) {
-//		this.email = email;
-//	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public String getOrganizationCurrently() {
 		return organizationCurrently;
@@ -48,13 +49,19 @@ public class System_Account implements Serializable{
 	}
 	
 	public void addOrganization(String organization) {
-		if(this.organizationList != null)
-			this.organizationList.add(organization);
+		this.organizationList.add(organization);
 	}
 	
 	public void removeOrganization(String organization) {
-		if(this.organizationList != null) 
-			this.organizationList.remove(organization);
+		this.organizationList.remove(organization);
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		System_Account data = (System_Account) o;
+		if (data.email.equals(this.email))
+			return true;
+		return false;
 	}
 	
 }

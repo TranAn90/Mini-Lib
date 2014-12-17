@@ -1,6 +1,7 @@
 package com.softlink.minilib.shared;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.googlecode.objectify.annotation.Entity;
@@ -15,11 +16,12 @@ public class System_Organization implements Serializable {
 	@Id
 	private String id;
 	private String name;
+	private String description;
 	private String admin;
 	@Unindex
-	private List<String> userList;
+	private List<String> userList = new ArrayList<String>();
 	@Unindex
-	private List<String> inviteList;
+	private List<String> inviteList = new ArrayList<String>();
 	
 	public System_Organization() {
 		super();
@@ -36,9 +38,17 @@ public class System_Organization implements Serializable {
 	public String getName() {
 		return name;
 	}
-
+	
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getAdmin() {
@@ -58,13 +68,11 @@ public class System_Organization implements Serializable {
 	}
 	
 	public void addUser(String user) {
-		if(this.userList != null)
-			this.userList.add(user);
+		this.userList.add(user);
 	}
 	
 	public void removeUser(String user) {
-		if(this.userList != null)
-			this.userList.remove(user);
+		this.userList.remove(user);
 	}
 
 	public List<String> getInviteList() {
@@ -76,13 +84,19 @@ public class System_Organization implements Serializable {
 	}
 	
 	public void addInvite(String invite) {
-		if(this.inviteList != null)
-			this.inviteList.add(invite);
+		this.inviteList.add(invite);
 	}
 	
 	public void removeInvite(String invite) {
-		if(this.inviteList != null) 
-			this.inviteList.remove(invite);
+		this.inviteList.remove(invite);
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		System_Organization data = (System_Organization) o;
+		if (data.id.equals(this.id))
+			return true;
+		return false;
 	}
 
 }

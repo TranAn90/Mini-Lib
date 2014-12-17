@@ -1,5 +1,7 @@
 package com.softlink.minilib.client.rpc;
 
+import java.util.List;
+
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.softlink.minilib.shared.Invite_Token;
 import com.softlink.minilib.shared.System_Account;
@@ -15,7 +17,9 @@ public interface SystemServiceAsync {
 	void updateAccount(System_Account account, AsyncCallback<Boolean> callback);
 	void retrieveAccount(String email, AsyncCallback<System_Account> callback);
 	
-	void insertInviteToken(Invite_Token token, AsyncCallback<Boolean> callback);
-	void retrieveInviteTokens(String email, AsyncCallback<Invite_Token> callback);
+	void insertInviteToken(String userEmail, System_Organization organization, AsyncCallback<Boolean> callback);
+	void retrieveInviteTokens(String email, AsyncCallback<List<Invite_Token>> callback);
+	void inviteTokenAccepted(Invite_Token token, AsyncCallback<System_Organization> callback);
+	void inviteTokenDenied(Invite_Token token, AsyncCallback<Void> callback);
 	
 }

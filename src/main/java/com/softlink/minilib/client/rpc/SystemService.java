@@ -52,8 +52,12 @@ public interface SystemService extends RemoteService {
 	
 	System_Account retrieveAccount(String email);
 	
-	boolean insertInviteToken(Invite_Token token);
+	boolean insertInviteToken(String userEmail, System_Organization organization);
 	
 	List<Invite_Token> retrieveInviteTokens(String email);
+	
+	System_Organization inviteTokenAccepted(Invite_Token token);
+	
+	void inviteTokenDenied(Invite_Token token);
 	
 }
