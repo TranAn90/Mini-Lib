@@ -14,8 +14,9 @@ public interface SystemServiceAsync {
 	void retrieveOrganization(Long id, AsyncCallback<System_Organization> callback);
 	
 	void insertAccount(System_Account account, AsyncCallback<Boolean> callback);
-	void updateAccount(System_Account account, AsyncCallback<Boolean> callback);
+//	void updateAccount(System_Account account, AsyncCallback<Boolean> callback);
 	void retrieveAccount(String email, AsyncCallback<System_Account> callback);
+	void goToOrganization(System_Organization organization, AsyncCallback<Boolean> callback);
 	
 	void insertInviteToken(String userEmail, System_Organization organization, AsyncCallback<Boolean> callback);
 	void retrieveInviteTokens(String email, AsyncCallback<List<Invite_Token>> callback);

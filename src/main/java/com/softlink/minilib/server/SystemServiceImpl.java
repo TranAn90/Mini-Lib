@@ -120,11 +120,14 @@ public class SystemServiceImpl extends RemoteServiceServlet implements SystemSer
 		return false;
 	}
 
-	@Override
-	public boolean updateAccount(System_Account account) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+//	@Override
+//	public boolean updateAccount(System_Account account) {
+//		if(isUserLogin() && userService.getCurrentUser().getEmail().equals(account.getEmail())) {
+//			ofy().save().entity(account);
+//			return true;
+//		}
+//		return false;
+//	}
 
 	@Override
 	public System_Account retrieveAccount(String email) {
@@ -132,6 +135,20 @@ public class SystemServiceImpl extends RemoteServiceServlet implements SystemSer
 		return null;
 	}
 	
+	@Override
+	public boolean goToOrganization(System_Organization organization) {
+		System_Account user = getCurrentUser();
+		System_Organization organi = ofy().load().type(System_Organization.class)
+				.id(organization.getId()).now();
+		if(organi != null && (organi.getAdmin().equals(user.getEmail()) 
+				|| organi.getUserList().contains(user.getEmail()))) {
+			user.setOrganizationCurrently(organization.getId());
+			ofy().save().entity(user);
+			return true;
+		}
+		return false;
+	}
+
 	private String generateInviteMail(System_Organization organization) {
 		String homeUrl = "http://softlinklab.appspot.com/";
 		String msgBody = "<div id=':1qo' class='ii gt m14449037a714da04 adP adO'><div id=':1q1' class='a3s' style='overflow: hidden;'><div style='border:1px solid #f5f5f5;max-width:90%'><div style='background-color:#eee;padding:5px 15px'><a title=' Mini Task '><img src='http://www.softlink.vn/s/setting/images/ItproLogo.png' style='width:40px' alt=' Itpro '></a></div><div style='padding:0 15px'><p>Xin chào,</p><p style='line-height:20px'>Mục đích của thư này là nhằm thông báo cho bạn rằng  "

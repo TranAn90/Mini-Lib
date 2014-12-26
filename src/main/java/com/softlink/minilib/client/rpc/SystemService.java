@@ -48,7 +48,9 @@ public interface SystemService extends RemoteService {
 	
 	boolean insertAccount(System_Account account);
 	
-	boolean updateAccount(System_Account account);
+//	boolean updateAccount(System_Account account);
+	
+	boolean goToOrganization(System_Organization organization);
 	
 	System_Account retrieveAccount(String email);
 	
