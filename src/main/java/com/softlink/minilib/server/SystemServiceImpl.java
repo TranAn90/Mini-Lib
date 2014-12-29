@@ -227,6 +227,7 @@ public class SystemServiceImpl extends RemoteServiceServlet implements SystemSer
 			organization.getUserList().add(account.getEmail());
 			organization.getInviteList().remove(account.getEmail());
 			account.getOrganizationList().add(organization.getId());
+			account.setOrganizationCurrently(organization.getId());
 			ofy().save().entity(organization);
 			ofy().save().entity(account);
 			ofy().delete().entity(token);
